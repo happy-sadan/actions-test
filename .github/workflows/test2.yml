@@ -1,4 +1,4 @@
-name: "uses" pytest
+name: \"uses\" pytest
 
 on:
   workflow_dispatch:
