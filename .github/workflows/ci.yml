@@ -13,9 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Python
-        run: apt install python
-      - name: Install pytest
-        run: apt install python-pytest
+      - name: Install Python and pytest
+        run: sudo apt install python python-pytest
       - name: Run pytest
         run: pytest
