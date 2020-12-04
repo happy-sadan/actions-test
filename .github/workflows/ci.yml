@@ -16,9 +16,23 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
+      ##########################
+      # Checkout the code base #
+      ##########################
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - name: Run Super-Linter
         uses: github/super-linter@v3
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#      - name: Run Super-Linter
+#        uses: github/super-linter@v3
+#        env:
+#            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
