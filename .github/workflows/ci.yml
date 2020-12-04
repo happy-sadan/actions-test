@@ -10,7 +10,7 @@ on:
 jobs:
 
   test:
-    name: Test with pytest
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,13 +19,14 @@ jobs:
         run: sudo apt-get install python python-pytest
       - name: Run pytest
         run: pytest
+
   lint:
-    name: Lint with Super-Linter
+    name: Lint
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Lint
+    - name: Run Super-Linter
       uses: github/super-linter@v3
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
