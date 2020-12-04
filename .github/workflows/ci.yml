@@ -1,10 +1,13 @@
 name: CI
 
 on:
+
   push:
     branches: [ main ]
+
   pull_request:
     branches: [ main ]
+
   workflow_dispatch:
 
 jobs:
@@ -13,10 +16,13 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Install Python and pytest
         run: sudo apt-get install python python-pytest
+
       - name: Run pytest
         run: pytest
 
@@ -24,8 +30,10 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
+
     - name: Checkout
       uses: actions/checkout@v2
+
     - name: Run Super-Linter
       uses: github/super-linter@v3
       env:
