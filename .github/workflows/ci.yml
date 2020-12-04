@@ -12,20 +12,6 @@ on:
 
 jobs:
 
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install Python and pytest
-        run: sudo apt-get install python python-pytest
-
-      - name: Run pytest
-        run: pytest
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
