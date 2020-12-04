@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Install python and pytest
-        run: sudo apt-get install python pytest
+        run: sudo apt-get install python python-pytest
         
       - name: Run pytest
         run: python -m pytest
